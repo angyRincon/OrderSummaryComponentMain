@@ -17,8 +17,8 @@
 }
 
 body {
-    background-image: url("./images/pattern-background-desktop.svg");
-    background-position: top;
+    background-image: url("images/pattern-background-desktop.svg");
+    background-position: top center;
     background-repeat: no-repeat;
     background-color: var(--pale-blue)
 }
@@ -32,11 +32,10 @@ body {
 
 .card {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(auto-fit, 330px);
     background-color: #fff;
-    width: 25%;
     border-radius: 20px;
-    box-shadow: 2px 2px 2px gray;
+    box-shadow: 0 10px 1px var(--pale-blue);
 }
 
 .card-media {
@@ -85,6 +84,16 @@ body {
 .card-content-plan a {
     color: var(--bright-blue);
     font-weight: 700;
+    text-decoration: underline;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+}
+
+.card-content-plan a:hover {
+    color: var(--desaturated-blue);
+    text-decoration: none;
+    -webkit-transform: translateY(-1px);
+    transform: translateY(-1px);
 }
 
 .card-content-plan-description {
@@ -117,7 +126,7 @@ body {
 }
 
 .card-content-buttons div {
-    padding: 8px;
+    padding: 10px;
     font-size: 12px;
     font-weight: 700;
     margin-bottom: 8px;
@@ -131,4 +140,25 @@ body {
     color: #fff;
     font-weight: 500;
     box-shadow: 0 10px 5px var(--pale-blue);
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+
+.card-content-buttons .button-pay:hover {
+    background-color: var(--desaturated-blue);
+    -webkit-transform: translateY(-1px) scale(1.01);
+    transform: translateY(-1px) scale(1.01);
+}
+
+.card-footer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--desaturated-blue);
+}
+
+@media screen and (max-width: 375px){
+    body {
+        background-image: url("images/pattern-background-mobile.svg");
+    }
 }
